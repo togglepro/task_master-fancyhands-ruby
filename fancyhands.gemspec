@@ -6,9 +6,9 @@ Gem::Specification.new do |s|
   s.description = "A ruby gem for the Fancy Hands API"
   s.authors     = ["Ted Roden"]
   s.email       = 'tedroden@fancyhands.com'
-  s.files       = ["lib/fancyhands.rb"]
-  s.homepage    =
-    'https://github.com/fancyhands/fancyhands-ruby'
+  s.files       = ["lib/fancyhands.rb",  
+                   "lib/fancyhands/request.rb"]
+  s.homepage    = 'https://github.com/fancyhands/fancyhands-ruby'
   s.license       = 'MIT'
 end
 

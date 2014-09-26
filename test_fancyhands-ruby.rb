@@ -1,17 +1,27 @@
 require 'fancyhands'
 
-f = Fancyhands.new("YOUR_API_KEY", "YOUR_API_SECRET", "http://localhost:8080/api/v1/")
+Fancy = FancyHands::V1::Client.new("YOUR API KEY", "YOUR API SECRET")
 
-puts f.echo({ :somedata => "here's yer data" })
+standard_request = Fancy.Standard.post("ruby test", "from ruby", 2.50)
+puts "Created request, loading it again"
+reloaded_standard_request = Fancy.Standard.get(standard_request["key"])
+puts "Loaded " + reloaded_standard_request["title"] + " (" + reloaded_standard_request["uniq"]  + ")"
 
-puts f.custom_post("From ruby", "some description", 1.0, nil, {})
-puts f.custom_get("ahJkZXZ-ZmFuY3loYW5kcy1ocmRyKQsSBkZIVXNlchiAgICAgICACgwLEglGSFJlcXVlc3QYgICAgIDAnwgM")
 
-r =  f.standard_post("From ruby", "some description", 1.0, nil)
+puts Fancy.Echo.post({ :somedata => "here's yer data" })
+
+# create a custom request
+c = Fancy.Custom.post("From ruby", "some description", 1.0, nil, {})
+# reload it
+puts Fancy.Custom.get(c["key"])
+# load all custom requests...
+puts Fancy.Custom.get()
+
+r =  Fancy.Standard.post("A new standard request", "some description", 1.0, nil)
 k = r["key"]
-f.message_post(k, "This is other message")
-print k
-puts f.standard_get(k)
+Fancy.Message.post(k, "A messgae on the new stnadard request")
+puts Fancy.Standard.get(k)
+
 
 conversation = {
   :id => "sample_conversation",
@@ -47,5 +57,5 @@ conversation = {
   ]
 }
 
-r =  f.call_post("646-330-0181", conversation)
-puts r
+r =  Fancy.Call.post("646-330-0181", conversation)
+puts "Created call!"
