@@ -5,7 +5,7 @@ This is our first pass at a ruby library / SDK.
 We'd gladly accept any pull requests or advice.
 
 This includes code for all of the Fancy Hands endpoints including:
- - fancyhands.call.Call
+ - fancyhands.call.Outgoing
  - fancyhands.echo.Echo
  - fancyhands.echo.Echo 
  - fancyhands.standard.Standard 
