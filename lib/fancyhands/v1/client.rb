@@ -7,7 +7,10 @@ require_relative 'echo'
 require_relative 'standard'
 require_relative 'message'
 require_relative 'custom'
-require_relative 'call'
+require_relative 'outgoing'
+require_relative 'history'
+require_relative 'incoming'
+require_relative 'number'
 
 module FancyHands
   module V1
@@ -15,9 +18,9 @@ module FancyHands
 
       attr_accessor :request
   
-      def initialize(key, secret, url="https://www.fancyhands.com/api/v1/")
+      def initialize(key, secret, url="http://localhost/api/v1/")
         @request = Request.new(key, secret, url)
-        @_standard = @_echo = @_custom = @_message = @_call = nil 
+        @_standard = @_echo = @_custom = @_message = @_outgoing = @_incoming = @_number = @_history = nil 
       end
 
       # Lazy load standard
@@ -52,12 +55,36 @@ module FancyHands
         @_message
       end
     
-      # Lazy load Call
-      def Call
-        if !@_call
-          @_call = Call.new(self)
+      # Lazy load Outgoing
+      def Outgoing
+        if !@_outgoing
+          @_outgoing = Outgoing.new(self)
         end
-        @_call
+        @_outgoing
+      end
+
+      # Lazy load Incoming
+      def Incoming
+        if !@_incoming
+          @_incoming = Incoming.new(self)
+        end
+        @_incoming
+      end
+
+      # Lazy load Number
+      def Number
+        if !@_number
+          @_number = Number.new(self)
+        end
+        @_number
+      end
+
+      # Lazy load History
+      def History
+        if !@_history
+          @_history = History.new(self)
+        end
+        @_history
       end
 
     end

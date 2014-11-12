@@ -7,7 +7,10 @@ Gem::Specification.new do |s|
   s.authors     = ["Ted Roden"]
   s.email       = 'tedroden@fancyhands.com'
   s.files       = ["lib/fancyhands.rb",  
-                   "lib/fancyhands/v1/call.rb",	
+                   "lib/fancyhands/v1/outgoing.rb",
+                   "lib/fancyhands/v1/number.rb",
+                   "lib/fancyhands/v1/incoming.rb",
+                   "lib/fancyhands/v1/history.rb",
                    "lib/fancyhands/v1/client.rb",
                    "lib/fancyhands/v1/custom.rb",
                    "lib/fancyhands/v1/echo.rb",
