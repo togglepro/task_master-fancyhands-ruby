@@ -6,6 +6,9 @@ We'd gladly accept any pull requests or advice.
 
 This includes code for all of the Fancy Hands endpoints including:
  - fancyhands.call.Outgoing
+ - fancyhands.call.Incoming
+ - fancyhands.call.Number
+ - fancyhands.call.History
  - fancyhands.echo.Echo
  - fancyhands.echo.Echo 
  - fancyhands.standard.Standard 
