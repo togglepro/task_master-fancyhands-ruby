@@ -4,7 +4,7 @@ class Request
   def initialize(key, secret, url)
     @url = url
     @consumer = OAuth::Consumer.new(key, secret)
-  end  
+  end
 
   def post(piece, data="")
     response = @consumer.request(:post, @url + piece, nil, {}, data)
