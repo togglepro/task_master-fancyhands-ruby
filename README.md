@@ -1,4 +1,6 @@
-# fancyhands-ruby
+# task_master-fancyhands-ruby
+
+**This is a fork of the [official Ruby client for FancyHands](https://github.com/fancyhands/fancyhands-ruby). A couple of key bugs are fixed already, but the library will certainly change much more. Feel free to use it but know that other changes will be coming. I may also refactor the interfaces to make the code more idiomatic Ruby and add tests, but haven't done that yet.**
 
 This is our first pass at a ruby library / SDK.
 
@@ -10,20 +12,20 @@ This includes code for all of the Fancy Hands endpoints including:
  - fancyhands.call.Number
  - fancyhands.call.History
  - fancyhands.echo.Echo
- - fancyhands.echo.Echo 
- - fancyhands.standard.Standard 
+ - fancyhands.echo.Echo
+ - fancyhands.standard.Standard
  - fancyhands.standard.Message
  - fancyhands.custom.Custom
 
 
 # Installing it
 
-`gem install fancyhands-ruby`
+`gem install task_master-fancyhands-ruby`
 
 # Using it
 
 ```ruby
-require 'fancyhands'
+require 'task_master-fancyhands'
 Fancy = FancyHands::V1::Client.new("YOUR API KEY", "YOUR API SECRET")
 # creating and loading a standard request
 s = Fancy.Standard.post("A simple request from Ruby", "Yada yada", 3.0)

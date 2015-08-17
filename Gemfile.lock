@@ -1,0 +1,21 @@
+PATH
+  remote: .
+  specs:
+    task_master-fancyhands-ruby (1.0.0)
+      addressable
+      oauth
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    addressable (2.3.8)
+    oauth (0.4.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  task_master-fancyhands-ruby!
+
+BUNDLED WITH
+   1.10.5
