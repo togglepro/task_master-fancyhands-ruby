@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'task_master-fancyhands-ruby'
-  s.version     = '1.0.0'
+  s.version     = '1.0.1'
   s.date        = '2014-09-26'
   s.summary     = "Fancy Hands"
   s.description = "A fork of the official ruby gem for the Fancy Hands API"
