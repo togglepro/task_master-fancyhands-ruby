@@ -4,7 +4,7 @@ module FancyHands
 
     def initialize(key, secret, url)
       @url = url
-      @consumer = OAuth::Consumer.new(key, secret)
+      @consumer = OAuth::Consumer.new(key, secret, timeout: 300)
     end
 
     def post(piece, data="")
